@@ -6,9 +6,17 @@ import React from 'react'
 
 // import Hero from './Components/Hero'
 
-import Card from './Components/Card'
+// import Card from './Components/Card'
 
-import Reuseable from './Components/Reuseable'
+// import Reuseable from './Components/Reuseable'
+
+import UseState from './Components/UseState'
+
+import AdvUseState from './Components/AdvUseState'
+
+import UpdateArray from './Components/UpdateArray'
+
+
 
 function App() {
   return (
@@ -17,8 +25,11 @@ function App() {
       <h1>Hello World</h1>
       <SecondPage />
       <Hero /> */}
-      <Card />
-      <Reuseable />
+      {/* <Card /> */}
+      {/* <Reuseable /> */}
+      {/* <UseState/> */}
+      {/* <AdvUseState/> */}
+    <UpdateArray />
     </>
   )
 }
