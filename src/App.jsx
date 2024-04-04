@@ -21,6 +21,9 @@ import Props from './Components/Props/Props'
 import Task from './Components/Props/Task'
 import Navbar from './Components/Props/Navbar'
 import SecondTask from './Components/Props/SecondTask'
+import From from './Components/Form Handling/FromUseref'
+import Controlled_components from './Components/Form Handling/Controlled_components'
+import React_hook_Form from './Components/Form Handling/React_hook_Form'
 
 
 
@@ -51,53 +54,53 @@ function App() {
     });
   };
 
-// for second task 
+  // for second task 
 
-const Card = [
-  { image : "https://images.unsplash.com/photo-1711907392527-4a895b190b61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" , name :"Callenger" , artist :"Rohit" , added :false,},
-  {
-    image : "https://images.unsplash.com/photo-1515010137531-66995c7f40e6?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name : "One Day",
-    artist : "Mahesh",
-    added : false
-  },
-  {
-    image : "https://images.unsplash.com/photo-1518401543587-7bf7a1f74e66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name : "last Day",
-    artist : "Mohit",
-    added : false
-  },
-  {
-    image : "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name : "last one",
-    artist : "Rajesh",
-    added :true
-  },
-  {
-    image : "https://images.unsplash.com/photo-1586363968502-b53ccba7ca1a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name : "Beliver",
-    artist : "Akshay",
-    added : false
-  },
-  {
-    image : "https://images.unsplash.com/photo-1582751836565-74f64cc184cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    name : "Dark Life",
-    artist : "Salman",
-    added : false
-  }
-]
-
-    const [SongData , setSongData] = useState(Card);
-
-    const handleClickSong = (index) => {
-      console.log('Clicked:', index);
-      setSongData((prev) => {
-        return prev.map((item, itemindex) => {
-          if (itemindex === index) return { ...item, added :!item.added };
-          return item;
-        });
-      });
+  const Card = [
+    { image: "https://images.unsplash.com/photo-1711907392527-4a895b190b61?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D", name: "Callenger", artist: "Rohit", added: false, },
+    {
+      image: "https://images.unsplash.com/photo-1515010137531-66995c7f40e6?q=80&w=2074&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "One Day",
+      artist: "Mahesh",
+      added: false
+    },
+    {
+      image: "https://images.unsplash.com/photo-1518401543587-7bf7a1f74e66?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "last Day",
+      artist: "Mohit",
+      added: false
+    },
+    {
+      image: "https://images.unsplash.com/photo-1585771724684-38269d6639fd?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "last one",
+      artist: "Rajesh",
+      added: true
+    },
+    {
+      image: "https://images.unsplash.com/photo-1586363968502-b53ccba7ca1a?q=80&w=1887&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Beliver",
+      artist: "Akshay",
+      added: false
+    },
+    {
+      image: "https://images.unsplash.com/photo-1582751836565-74f64cc184cb?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+      name: "Dark Life",
+      artist: "Salman",
+      added: false
     }
+  ]
+
+  const [SongData, setSongData] = useState(Card);
+
+  const handleClickSong = (index) => {
+    console.log('Clicked:', index);
+    setSongData((prev) => {
+      return prev.map((item, itemindex) => {
+        if (itemindex === index) return { ...item, added: !item.added };
+        return item;
+      });
+    });
+  }
 
 
   return (
@@ -125,15 +128,21 @@ const Card = [
 
       </div> } */}
 
-     {/* second task  */}
+      {/* second task  */}
 
-      <Navbar data ={SongData}/>
+      {/* <Navbar data ={SongData}/>
 
       <div className='px-20 flex gap-10 mt-10 flex-wrap'>
       {SongData.map((item, index) => ( <SecondTask key={index} data = {item} handleClickSong ={handleClickSong} index ={index} /> ) )}
       
     
-      </div>
+      </div> */}
+
+
+      {/* form Handling file  */}
+      {/* <From/> */}
+      {/* <Controlled_components /> */}
+      <React_hook_Form/>
 
     </>
   )
